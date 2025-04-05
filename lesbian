@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesbian Checker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Fredoka', sans-serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      color: #222;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .container {
+      background: white;
+      border-radius: 30px;
+      padding: 40px 30px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      max-width: 420px;
+      margin: auto;
+      transition: all 0.3s ease;
+    }
+    h1 {
+      background: linear-gradient(to right, #e91e63, #ff1493);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    input[type="text"] {
+      padding: 12px;
+      width: 85%;
+      font-size: 16px;
+      border-radius: 15px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    input[type="text"]:focus {
+      border-color: #ff69b4;
+    }
+    button {
+      background: linear-gradient(to right, #f06292, #ec407a);
+      border: none;
+      padding: 12px 25px;
+      color: white;
+      font-size: 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: linear-gradient(to right, #ec407a, #f06292);
+    }
+    .result {
+      margin-top: 30px;
+      font-size: 22px;
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesbian Checker</h1>
+    <p>Find out how lesbian you are on Twitter!</p>
+    <input type="text" id="username" placeholder="@your_username">
+    <br>
+    <button onclick="checkLesbian()">Check</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function checkLesbian() {
+      const username = document.getElementById('username').value;
+      const percent = Math.floor(Math.random() * 100) + 1;
+      const resultText = `
+        <p><strong style="color:#ff1493;">${username}</strong> is</p>
+        <p style="font-size:32px; color:#e91e63; font-weight:bold;">${percent}% LESBIAN</p>
+        <p>${percent > 80 ? "Off the charts! You radiate sapphic vibes!" : percent > 50 ? "Looking pretty rainbow!" : "Still fabulous and glowing!"}</p>
+      `;
+      document.getElementById('result').innerHTML = resultText;
+    }
+  </script>
+</body>
+</html>
